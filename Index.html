@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Касса - Вкус СССР</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🛒 Касса "Вкус СССР"</h1>
+
+    <!-- Сканер -->
+    <div id="scanner-container">
+      <h3>Сканер товаров</h3>
+      <div id="qr-reader" style="width: 100%;"></div>
+      <p id="scan-result" style="color: green; font-weight: bold;"></p>
+    </div>
+
+    <!-- Товары -->
+    <div class="products">
+      <button onclick="addToCart('Газировка', 35)">Газировка - 35 ₽</button>
+      <button onclick="addToCart('Сухарики', 25)">Сухарики - 25 ₽</button>
+      <button onclick="addToCart('Мороженое', 40)">Мороженое - 40 ₽</button>
+      <button onclick="addToCart('Хлеб', 20)">Хлеб - 20 ₽</button>
+      <button onclick="addToCart('Селедка', 60)">Селёдка - 60 ₽</button>
+    </div>
+
+    <!-- Чек -->
+    <div class="cart">
+      <h2>Чек</h2>
+      <ul id="cart-items"></ul>
+      <p><strong>Итого:</strong> <span id="total">0</span> ₽</p>
+      <div class="buttons">
+        <button onclick="checkout('cash')">Наличными</button>
+        <button onclick="checkout('card')">Картой</button>
+        <button onclick="clearCart()">Очистить</button>
+        <button onclick="exportToPDF()">Сохранить PDF</button>
+      </div>
+    </div>
+
+    <!-- История продаж -->
+    <div class="history">
+      <h3>История продаж</h3>
+      <ul id="sales-history"></ul>
+    </div>
+  </div>
+
+  <!-- Подключаем библиотеки -->
+  <script src="https://unpkg.com/html5-qrcode @2.3.4/html5-qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+  <script src="script.js"></script>
+</body>
+</html>
